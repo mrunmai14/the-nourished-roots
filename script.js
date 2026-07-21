@@ -47,3 +47,44 @@ if (revealTargets.length && 'IntersectionObserver' in window) {
     revealTargets.forEach(el => observer.observe(el));
   }
 }
+document.addEventListener("DOMContentLoaded", function () {
+
+  const filterButtons = document.querySelectorAll(".journal-filter");
+  const journalCards = document.querySelectorAll(".journal-card");
+
+  filterButtons.forEach(button => {
+
+    button.addEventListener("click", function () {
+
+      // Remove active class from all buttons
+      filterButtons.forEach(btn => {
+        btn.classList.remove("active");
+      });
+
+      // Add active class to clicked button
+      this.classList.add("active");
+
+      // Get selected category
+      const selectedFilter = this.getAttribute("data-filter");
+
+      // Show / hide cards
+      journalCards.forEach(card => {
+
+        const cardCategory = card.getAttribute("data-category");
+
+        if (
+          selectedFilter === "all" ||
+          cardCategory === selectedFilter
+        ) {
+          card.style.display = "";
+        } else {
+          card.style.display = "none";
+        }
+
+      });
+
+    });
+
+  });
+
+});
