@@ -80,61 +80,75 @@
 
         <div class="contact-box">
 
-            <form class="contact-form">
+            <form class="contact-form" id="contactForm">
 
-                <h3>Send us a message</h3>
+    <h3>Send us a message</h3>
 
-                <div class="form-group">
-                    <label>Full Name</label>
-                    <input type="text" placeholder="Your full name">
-                </div>
+    <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input 
+            type="text" 
+            id="fullName"
+            name="fullName"
+            placeholder="Your full name"
+            required
+        >
+    </div>
 
-                <div class="form-group">
-                    <label>Email Address</label>
-                    <input type="email" placeholder="you@example.com">
-                </div>
+    <div class="form-group">
+        <label for="email">Email Address</label>
+        <input 
+            type="email" 
+            id="email"
+            name="email"
+            placeholder="you@example.com"
+            required
+        >
+    </div>
 
-                <div class="form-group">
-                    <label>Phone Number</label>
-                    <input type="tel" placeholder="+91 XXXXX XXXXX">
-                </div>
+    <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input 
+            type="tel" 
+            id="phone"
+            name="phone"
+            placeholder="+91 XXXXX XXXXX"
+        >
+    </div>
 
-                <div class="form-group">
-                    <label>I'm reaching out about</label>
+    <div class="form-group">
+        <label for="subject">I'm reaching out about</label>
 
-                    <select>
-                        <option>Select an option</option>
-                        <option>Meals & Orders</option>
-                        <option>Workplace Pop-ups</option>
-                        <option>Functional Beverages</option>
-                        <option>Workshops & Community</option>
-                        <option>Collaborations</option>
-                        <option>General Enquiry</option>
-                    </select>
+        <select id="subject" name="subject" required>
+            <option value="">Select an option</option>
+            <option value="Meals & Orders">Meals & Orders</option>
+            <option value="Workplace Pop-ups">Workplace Pop-ups</option>
+            <option value="Functional Beverages">Functional Beverages</option>
+            <option value="Workshops & Community">Workshops & Community</option>
+            <option value="Collaborations">Collaborations</option>
+            <option value="General Enquiry">General Enquiry</option>
+        </select>
+    </div>
 
-                </div>
+    <div class="form-group">
+        <label for="message">Message</label>
 
-                <div class="form-group">
-                    <label>Message</label>
+        <textarea 
+            id="message"
+            name="message"
+            rows="6"
+            placeholder="Tell us how we can help..."
+            required
+        ></textarea>
+    </div>
 
-                    <textarea rows="6"
-                        placeholder="Tell us how we can help..."></textarea>
+    <button type="submit" class="root-send-btn">
+        <span>Send Message</span>
+    </button>
 
-                </div>
+    <p id="formMessage"></p>
 
-               <button type="submit" class="root-send-btn">
-    <span>Send Message</span>
-
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-        <path d="M5 12H19M19 12L13 6M19 12L13 18"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"/>
-    </svg>
-</button>
-
-            </form>
+</form>
 
         </div>
 
@@ -144,4 +158,4 @@
 <footer class="footer"><div class="container footer-grid"><div><h3>The Nourished Roots</h3><p>Plant-based food rooted in compassion, nourishment and conscious living.
 </p></div><div><strong>Pages</strong><a href="index.html">Home</a><a href="about.html">About</a><a href="menu.html">Menu</a><a href="community.html">Community</a><a href="contact.html">Contact</a></div>
 <div><strong>Based In</strong><p>Pune, Maharashtra</p></div>
-<div><strong>Follow Along</strong><a href="https://www.instagram.com/thenourishedroots.in?igsh=d21hYXQ0d3Rsempi">Instagram</a><a href="#">Facebook</a> <a href="mailto:thenourishedroots.in@gmail.com">Email</a></div></div><div class="container copy">© 2026 Nourished Roots.</div></footer><script src="script.js"></script></body></html>
+<div><strong>Follow Along</strong><a href="https://www.instagram.com/thenourishedroots.in?igsh=d21hYXQ0d3Rsempi">Instagram</a><a href="#">Facebook</a> <a href="mailto:thenourishedroots.in@gmail.com">Email</a></div></div><div class="container copy">© 2026 Nourished Roots.</div></footer> <script src="contact.js"></script><script src="script.js"></script></body></html>
