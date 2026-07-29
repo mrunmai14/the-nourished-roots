@@ -92,17 +92,16 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   function sendToSheet(data) {
+    // Apps Script web apps issue a redirect on POST, and fetch() silently
+    // downgrades a redirected POST to a GET, which skips doPost entirely.
+    // mode:"no-cors" sends the POST as a fire-and-forget request instead,
+    // sidestepping the redirect/CORS issue. We can't read the response
+    // body this way, so we treat "the request didn't throw" as success.
     return fetch(SHEET_WEBHOOK_URL, {
       method: "POST",
+      mode: "no-cors",
       headers: { "Content-Type": "text/plain;charset=utf-8" },
       body: JSON.stringify(data)
-    }).then(function (response) {
-      if (!response.ok) {
-        throw new Error("Webhook responded with status " + response.status);
-      }
-      return response.json().catch(function () {
-        return { status: "success" };
-      });
     });
   }
 
