@@ -4,6 +4,35 @@
    ============================================================ */
 
 document.addEventListener("DOMContentLoaded", function () {
+
+  // ---- Mobile nav toggle (runs on every page) ----
+  var navToggle = document.getElementById("navToggle");
+  var navLinks = document.getElementById("navLinks");
+
+  if (navToggle && navLinks) {
+    navToggle.addEventListener("click", function () {
+      var isOpen = navLinks.classList.toggle("show");
+      navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    // Close the menu when a link is tapped
+    navLinks.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("show");
+        navToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    // Close the menu if the window is resized back to desktop width
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 900) {
+        navLinks.classList.remove("show");
+        navToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+
+document.addEventListener("DOMContentLoaded", function () {
   var form = document.getElementById("contactForm");
   if (!form) return; // only runs on contact.html
 
