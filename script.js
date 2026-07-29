@@ -30,9 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
         navToggle.setAttribute("aria-expanded", "false");
       }
     });
-  }
-
-document.addEventListener("DOMContentLoaded", function () {
   var form = document.getElementById("contactForm");
   if (!form) return; // only runs on contact.html
 
