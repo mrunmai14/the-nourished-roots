@@ -1,6 +1,6 @@
 /* ============================================================
    Nourished Roots — site script
-   Currently handles: contact form -> sends JSON to Google Sheet
+   Handles: mobile nav toggle (all pages) + contact form -> Google Sheet
    ============================================================ */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -30,8 +30,11 @@ document.addEventListener("DOMContentLoaded", function () {
         navToggle.setAttribute("aria-expanded", "false");
       }
     });
+  }
+
+  // ---- Contact form (only runs on contact.html) ----
   var form = document.getElementById("contactForm");
-  if (!form) return; // only runs on contact.html
+  if (!form) return;
 
   var statusEl = document.getElementById("cfStatus");
   var submitBtn = form.querySelector(".root-send-btn");
