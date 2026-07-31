@@ -5390,29 +5390,37 @@ grid-template-columns:1fr;
   border-top: 1px solid rgba(79, 95, 47, 0.25);
 }
 
-.article-list a {
+.article-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid rgba(79, 95, 47, 0.25);
+}
+
+.article-list .article-link {
   display: grid;
   grid-template-columns: 60px 1fr 40px;
   align-items: center;
   gap: 20px;
+
+  flex: 1;
+  min-width: 0;
 
   padding: 25px 10px;
 
   text-decoration: none;
   color: #3e382e;
 
-  border-bottom: 1px solid rgba(79, 95, 47, 0.25);
-
   transition: all 0.3s ease;
 }
 
-.article-list a:hover {
+.article-list .article-link:hover {
   padding-left: 20px;
   color: #4f5f2f;
   background: #f8eedf;
 }
 
-.article-list a > span:first-child {
+.article-list .article-link > span:first-child {
   color: #4f5f2f;
   font-size: 13px;
   font-weight: 600;
@@ -5430,8 +5438,32 @@ grid-template-columns:1fr;
   transition: transform 0.3s ease;
 }
 
-.article-list a:hover .arrow {
+.article-list .article-link:hover .arrow {
   transform: translateX(5px);
+}
+
+.linkedin-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  margin-right: 10px;
+
+  border-radius: 50%;
+  background: #f3ead9;
+  color: #4f5f2f;
+  font-size: 15px;
+  text-decoration: none;
+
+  transition: all 0.3s ease;
+}
+
+.linkedin-icon:hover {
+  background: #4f5f2f;
+  color: #fff;
 }
 
 @media (max-width: 600px) {
@@ -5444,13 +5476,20 @@ grid-template-columns:1fr;
     font-size: 40px;
   }
 
-  .article-list a {
+  .article-list .article-link {
     grid-template-columns: 40px 1fr 25px;
     gap: 10px;
   }
 
   .article-list strong {
     font-size: 19px;
+  }
+
+  .linkedin-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 13px;
+    margin-right: 5px;
   }
 
 }
@@ -5462,5 +5501,20 @@ grid-template-columns:1fr;
     width:1px;
     height:1px;
     overflow:hidden;
+}
+
+.form-status{
+    margin-top:16px;
+    font-size:14px;
+    line-height:1.5;
+    text-align:center;
+}
+
+.form-status--success{
+    color:#556B2F;
+}
+
+.form-status--error{
+    color:#B3261E;
 }
 
