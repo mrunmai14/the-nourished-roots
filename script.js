@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var submitBtn = form.querySelector(".root-send-btn");
 
   // Google Apps Script Web App URL (deployed from the linked Google Sheet)
-  var SHEET_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbwxWZdS1PDd8eG18iagOFcaPUeJ3NblfM5qVx0h6SXBYYDvylewtNL25irUSboxV7fv-Q/exec";
+  var SHEET_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbzuEW-HgU-A5zKEyemZ3knEZQ3Vd9TmR9WT4c61PoCXUTQf9NIIobIc81EhypHsrzcikg/exec";
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
