@@ -2,6 +2,20 @@
    Nourished Roots — site script
    Handles: mobile nav toggle (all pages) + contact form -> Google Sheet
    ============================================================ */
+ document.querySelectorAll('.update-copy').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var email = btn.getAttribute('data-email');
+      navigator.clipboard.writeText(email).then(function () {
+        var original = btn.textContent;
+        btn.textContent = 'Copied ' + email;
+        btn.classList.add('copied');
+        setTimeout(function () {
+          btn.textContent = original;
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    });
+  });
 
 document.addEventListener("DOMContentLoaded", function () {
 

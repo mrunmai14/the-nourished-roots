@@ -1143,7 +1143,7 @@ h1,h2,h3{
    MOBILE
 ====================================================== */
 
-@media(max-width:560px){
+@media(max-width:600px){
 
   .paper{
     width:calc(100% - 18px);
@@ -5518,3 +5518,121 @@ grid-template-columns:1fr;
     color:#B3261E;
 }
 
+.updates-section{
+    position:relative;
+    padding:5rem 0;
+    background:var(--cream, #faf6ee);
+  }
+  .updates-header{
+    text-align:center;
+    max-width:640px;
+    margin:0 auto 3rem;
+  }
+  .updates-header .label{
+    font-family:var(--display);
+    text-transform:uppercase;
+    letter-spacing:0.12em;
+    font-size:0.8rem;
+    color:var(--gold, #c68a1f);
+  }
+  .updates-header h2{
+    font-family:var(--display);
+    color:var(--forest, #2f3d2c);
+    margin:0.5rem 0 0.75rem;
+  }
+  .updates-header p{
+    font-family:var(--display);
+    color:var(--forest-soft, #5a6353);
+    line-height:1.6;
+  }
+  .updates-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+    gap:1.75rem;
+    max-width:1100px;
+    margin:0 auto;
+    padding:0 1.5rem;
+  }
+  .update-card{
+    background:#fff;
+    border:1px solid rgba(47,61,44,0.1);
+    border-radius:14px;
+    padding:1.75rem;
+    display:flex;
+    flex-direction:column;
+    gap:0.75rem;
+    transition:transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .update-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 28px rgba(47,61,44,0.08);
+  }
+  .update-meta{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:0.5rem;
+  }
+  .update-tag{
+    font-family:var(--display);
+    font-size:0.7rem;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    padding:0.3rem 0.7rem;
+    border-radius:999px;
+    background:rgba(198,138,31,0.12);
+    color:var(--gold, #c68a1f);
+  }
+  .update-tag.hiring{
+    background:rgba(47,61,44,0.1);
+    color:var(--forest, #2f3d2c);
+  }
+  .update-date{
+    font-family:var(--display);
+    font-size:0.75rem;
+    color:#9a9a8f;
+  }
+  .update-card h3{
+    font-family:var(--display);
+    color:var(--forest, #2f3d2c);
+    font-size:1.15rem;
+    margin:0;
+  }
+  .update-card p{
+    font-family:var(--display);
+    color:#5a5a52;
+    font-size:0.95rem;
+    line-height:1.55;
+    margin:0;
+  }
+  .update-card a.update-link{
+    font-family:var(--display);
+    font-weight:600;
+    font-size:0.9rem;
+    color:var(--gold, #c68a1f);
+    text-decoration:none;
+    margin-top:auto;
+  }
+  .update-card a.update-link:hover{
+    text-decoration:underline;
+  }
+
+   .update-copy{
+    font-family:'Space Mono', monospace;
+    font-size:0.75rem;
+    color:#9a9a8f;
+    background:none;
+    border:none;
+    padding:0;
+    text-align:left;
+    cursor:pointer;
+    width:fit-content;
+    margin-top:-0.25rem;
+  }
+  .update-copy:hover{
+    color:var(--forest, #2f3d2c);
+    text-decoration:underline;
+  }
+  .update-copy.copied{
+    color:var(--gold, #c68a1f);
+  }
