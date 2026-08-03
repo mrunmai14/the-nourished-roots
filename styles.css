@@ -201,7 +201,7 @@ h1{font-family:var(--display);font-size:clamp(3rem,8vw,7rem);font-weight:400;lin
 .feature strong{
     display:inline-block;
     position:relative;
-    font-family:'DM Serif Display',serif;
+    font-family:var(--display);
     font-size:1.9rem;
     color:#3F2B1D;
     margin-bottom:14px;
@@ -238,7 +238,7 @@ h1{font-family:var(--display);font-size:clamp(3rem,8vw,7rem);font-weight:400;lin
     margin:0;
     color:#2b221b;
     font-size:1.4rem;
-    font-family:"Playfair Display", serif;
+    font-family:var(--display);
     font-weight:600;
 }.price{
     color:#556b2f;
@@ -262,7 +262,7 @@ h1{font-family:var(--display);font-size:clamp(3rem,8vw,7rem);font-weight:400;lin
 .timeline{display:grid;gap:1rem}.timeline-item{display:grid;grid-template-columns:110px 1fr;gap:1.4rem;background:var(--white);border-radius:24px;padding:1.2rem;border:1px solid rgba(85,107,47,.15)}.timeline-item strong{font-family:var(--display);font-size:1.45rem;color:var(--olive)}
 .contact-box{background:var(--white);border-radius:32px;padding:2rem;border:1px solid rgba(85,107,47,.15);box-shadow:var(--shadow)}.form{display:grid;gap:1rem}.form input,.form textarea{width:100%;padding:1rem;border:1px solid rgba(85,107,47,.25);border-radius:16px;background:#fffdf7;font:inherit}.form textarea{min-height:140px;resize:vertical}.form button{border:0;cursor:pointer;background:var(--olive);color:var(--cream)}
 .logo-showcase{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}.logo-concept{background:var(--white);border-radius:26px;padding:1.5rem;text-align:center;border:1px solid rgba(85,107,47,.18)}.logo-concept svg{height:86px;margin:auto auto .8rem}.logo-concept h3{font-family:var(--display);font-weight:400;color:var(--brown-dark)}
-.footer{background:var(--brown-dark);color:var(--cream);padding:4rem 0 2rem}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem}.footer h3{font-family:"Cormorant Garamond", serif;font-size:2rem;font-weight:100}.footer a,.footer p{color:rgba(246,239,226,.72);display:block;margin:.35rem 0}.copy{border-top:1px solid rgba(246,239,226,.14);margin-top:2rem;padding-top:1rem;color:rgba(246,239,226,.55)}
+.footer{background:var(--brown-dark);color:var(--cream);padding:4rem 0 2rem}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem}.footer h3{font-family:var(--display);font-size:2rem;font-weight:100}.footer a,.footer p{color:rgba(246,239,226,.72);display:block;margin:.35rem 0}.copy{border-top:1px solid rgba(246,239,226,.14);margin-top:2rem;padding-top:1rem;color:rgba(246,239,226,.55)}
 
 @media(max-width:900px){.nav-toggle{display:flex}.nav-links{position:absolute;top:78px;left:0;width:100%;background:var(--cream);padding:1.1rem 1.5rem 1.6rem;display:none;flex-direction:column;align-items:flex-start;gap:.35rem;border-bottom:1px solid rgba(85,107,47,.18);box-shadow:0 20px 40px rgba(58,36,23,.1)}.nav-links a{width:100%;padding:.6rem 0;border-bottom:1px solid rgba(85,107,47,.1)}.nav-links a:last-child{border-bottom:0}.nav-links.show{display:flex}.grid-2,.card-grid,.community-grid,.blog-grid,.feature-strip,.footer-grid,.logo-showcase{grid-template-columns:1fr}.feature-strip{margin-top:auto}.hero{min-height:82vh}h1{font-size:3.8rem}.section{padding:4rem 0}.image-card{min-height:320px}.timeline-item{grid-template-columns:1fr}}
 @media(max-width:600px){.logo-img{height:46px}.nav-inner{height:66px}.hero{padding-top:66px}.card-grid,.making-grid{gap:1rem}h1{font-size:2.6rem}.section-title{font-size:2.1rem}.btn-row{flex-direction:column;align-items:stretch}}
@@ -486,16 +486,18 @@ h1,h2,h3{
 ====================================================== */
 
 .belief-grid{
-  display:grid;
+  display:flex;
   grid-template-columns:repeat(5, minmax(0, 1fr));
   gap:16px;
   margin-top:34px;
+  justify-content:center;
 }
 
 .mini-card{
   min-height:170px;
-  padding:26px 18px;
-
+  width : 270px;
+  padding:16px 8px;
+  justify-content:center;
   display:grid;
   place-items:center;
 
@@ -517,7 +519,7 @@ h1,h2,h3{
   display:block;
   margin-bottom:7px;
 
-  font-family:'DM Serif Display',serif;
+  font-family:var(--display);
   font-size:25px;
   line-height:1.1;
   color:var(--olive);
@@ -732,7 +734,7 @@ h1,h2,h3{
 .flow-box h3{
   margin:0 0 7px;
 
-  font-family:"Cormorant Garamond", Georgia, serif;
+  font-family:var(--display);
   font-size:29px;
   font-weight:500;
   color:var(--olive);
@@ -819,7 +821,7 @@ h1,h2,h3{
 
   background:
     linear-gradient(rgba(47,58,34,.93), rgba(47,58,34,.95)),
-    url("https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1600&q=85")
+    
     center/cover no-repeat;
 }
 
@@ -954,7 +956,7 @@ h1,h2,h3{
 .symbol-row h3{
   margin:0 0 7px;
 
-  font-family:"Cormorant Garamond", Georgia, serif;
+  font-family:var(--display);
   font-size:31px;
   line-height:1.08;
   font-weight:500;
@@ -1069,7 +1071,7 @@ h1,h2,h3{
 }
 .final1 p{
   max-width:760px;
-  margin:0 auto 18px;
+  margin:20px auto 18px;
 
   font-size:18px;
   line-height:1.75;
@@ -1451,7 +1453,7 @@ h1,h2,h3{
 
 .making-card h3{
   margin:0;
-  font-family:"Cormorant Garamond", Georgia, serif;
+  font-family:var(--display);
   font-size:36px;
   line-height:1;
   font-weight:500;
@@ -1632,7 +1634,7 @@ h1,h2,h3{
 .journey-strip .flow-box h3{
     margin:0 0 10px;
     color:#fff8ec;
-    font-family:Georgia, "Times New Roman", serif;
+    font-family:var(--display);
     font-size:1.65rem;
     font-weight:400;
     line-height:1;
@@ -1641,7 +1643,7 @@ h1,h2,h3{
 .journey-strip .flow-box p{
     margin:0;
     color:rgba(255,248,236,.8);
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:var(--display);
     font-size:.76rem;
     line-height:1.45;
 }
@@ -2101,7 +2103,7 @@ h1,h2,h3{
 }
 
 .ingredient-badge strong{
-    font-family:Georgia, "Times New Roman", serif;
+    font-family:var(--display);
     font-size:1.35rem;
     font-weight:400;
 }
@@ -2365,7 +2367,7 @@ h1,h2,h3{
 }
 
 .roots-content p{
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:var(--display);
     font-size:1rem;
     line-height:1.8;
 }
@@ -2425,7 +2427,7 @@ h1,h2,h3{
 .roots-image-note p{
     margin:0;
     color:#fff;
-    font-family:Georgia, "Times New Roman", serif;
+    font-family:var(--display);
     font-size:1.35rem;
     line-height:1.25;
 }
@@ -2436,7 +2438,7 @@ h1,h2,h3{
 
 .roots-lead{
     color:#4f3c2f;
-    font-size:1.12rem !important;
+    
 }
 
 .roots-signature{
@@ -2459,7 +2461,7 @@ h1,h2,h3{
 .roots-signature p{
     margin:0;
     color:var(--olive);
-    font-family:Georgia, "Times New Roman", serif;
+    font-family:var(--display);
     font-size:1.35rem;
     font-style:italic;
     line-height:1.45;
@@ -2689,7 +2691,7 @@ h1,h2,h3{
 }
 
 .roots-gallery-caption strong{
-    font-family:Georgia, "Times New Roman", serif;
+    font-family:var(--display);
     font-size:1.3rem;
     font-weight:400;
 }
@@ -2812,7 +2814,7 @@ h1,h2,h3{
 .roots-journey-photo-copy p{
     margin:0;
     color:#fff;
-    font-family:Georgia, "Times New Roman", serif;
+    font-family:var(--display);
     font-size:2.4rem;
 }
 
@@ -2848,7 +2850,7 @@ h1,h2,h3{
 .roots-poem p{
     margin:0 0 5px;
     color:#4c382b;
-    font-family:Georgia, "Times New Roman", serif;
+    font-family:var(--display);
     font-size:1.3rem;
     font-style:italic;
     line-height:1.55;
@@ -2892,7 +2894,7 @@ h1,h2,h3{
 
 .roots-final-badge strong{
     max-width:130px;
-    font-family:Georgia, "Times New Roman", serif;
+    font-family:var(--display);
     font-size:1.35rem;
     font-weight:400;
 }
@@ -3081,7 +3083,7 @@ h1,h2,h3{
 .root-journey-label{
   margin:0 0 14px;
   color:var(--journey-olive-light);
-  font-family:Arial, Helvetica, sans-serif;
+  font-family:var(--display);
   font-size:.74rem;
   font-weight:700;
   letter-spacing:.28em;
@@ -3107,7 +3109,7 @@ h1,h2,h3{
   max-width:660px;
   margin:0 auto;
   color:var(--journey-muted);
-  font-family:Arial, Helvetica, sans-serif;
+  font-family:var(--display);
   font-size:1rem;
   line-height:1.8;
 }
@@ -3174,7 +3176,7 @@ h1,h2,h3{
   display:block;
   margin-bottom:14px;
   color:#b2bca7;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family:var(--display);
   font-size:.7rem;
   font-weight:700;
   letter-spacing:.18em;
@@ -3183,7 +3185,7 @@ h1,h2,h3{
 .root-journey-item h3{
   margin:0 0 8px;
   color:var(--journey-brown);
-  font-family:Georgia, "Times New Roman", serif;
+  font-family:var(--display);
   font-size:2rem;
   font-weight:400;
   line-height:1.1;
@@ -3192,7 +3194,7 @@ h1,h2,h3{
 .root-step-tag{
   margin:0 0 20px;
   color:var(--journey-olive-light);
-  font-family:Arial, Helvetica, sans-serif;
+  font-family:var(--display);
   font-size:.68rem;
   font-weight:700;
   letter-spacing:.14em;
@@ -3202,7 +3204,7 @@ h1,h2,h3{
 .root-step-text{
   margin:0;
   color:var(--journey-muted);
-  font-family:Arial, Helvetica, sans-serif;
+  font-family:var(--display);
   font-size:.9rem;
   line-height:1.75;
 }
@@ -3283,7 +3285,7 @@ h1,h2,h3{
   left:50%;
   transform:translateX(-50%);
   color:var(--journey-olive);
-  font-family:Georgia, "Times New Roman", serif;
+  font-family:var(--display);
   font-size:4.5rem;
   line-height:1;
 }
@@ -3292,7 +3294,7 @@ h1,h2,h3{
   max-width:680px;
   margin:0 auto;
   color:var(--journey-olive);
-  font-family:Georgia, "Times New Roman", serif;
+  font-family:var(--display);
   font-size:clamp(1.35rem, 2.4vw, 2rem);
   font-style:italic;
   line-height:1.45;
@@ -3383,7 +3385,7 @@ h1,h2,h3{
 .journal-label{
   margin:0 0 13px;
   color:#73834e;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family:var(--display);
   font-size:.74rem;
   font-weight:700;
   letter-spacing:.22em;
@@ -3411,7 +3413,7 @@ h1,h2,h3{
 }
 
 .journal-page p{
-  font-family:Arial, Helvetica, sans-serif;
+  font-family:var(--display);
   line-height:1.75;
 }
 
@@ -3551,7 +3553,7 @@ h1,h2,h3{
   border-radius:100px;
   background:#eef2e8;
   color:var(--journal-olive);
-  font-family:Arial, Helvetica, sans-serif;
+  font-family:var(--display);
   font-size:.66rem;
   font-weight:700;
   letter-spacing:.13em;
@@ -3605,7 +3607,7 @@ h1,h2,h3{
   background:transparent;
   color:var(--journal-olive);
   cursor:pointer;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family:var(--display);
   font-size:.76rem;
   font-weight:700;
   transition:.3s ease;
@@ -3700,7 +3702,7 @@ h1,h2,h3{
   align-items:center;
   gap:10px;
   color:var(--journal-olive);
-  font-family:Arial, Helvetica, sans-serif;
+  font-family:var(--display);
   font-size:.76rem;
   font-weight:700;
   letter-spacing:.07em;
@@ -3775,7 +3777,7 @@ h1,h2,h3{
 }
 
 .editorial-image-label strong{
-  font-family:Georgia, "Times New Roman", serif;
+  font-family:var(--display);
   font-size:1.35rem;
   font-weight:400;
   line-height:1.3;
@@ -3800,7 +3802,7 @@ h1,h2,h3{
   padding:24px 0 24px 25px;
   border-left:3px solid var(--journal-clay);
   color:var(--journal-olive);
-  font-family:Georgia, "Times New Roman", serif;
+  font-family:var(--display);
   font-size:1.35rem;
   font-style:italic;
   line-height:1.5;
@@ -4064,7 +4066,7 @@ h1,h2,h3{
 
 .values-heading .label{
   margin:0 0 10px;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family:var(--display);
   font-size:12px;
   line-height:1.4;
   font-weight:700;
@@ -4085,7 +4087,7 @@ h1,h2,h3{
 .values-intro{
   max-width:640px;
   margin:0;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family:var(--display);
   font-size:17px;
   line-height:1.7;
   color:rgba(255,248,236,.78);
@@ -4150,7 +4152,7 @@ h1,h2,h3{
   position:absolute;
   top:25px;
   right:25px;
-  font-family:Georgia, "Times New Roman", serif;
+  font-family:var(--display);
   font-size:15px;
   color:rgba(79,95,47,.48);
 }
@@ -4169,7 +4171,7 @@ h1,h2,h3{
 
 .value-card h3{
   margin:0 0 13px;
-  font-family:Georgia, "Times New Roman", serif;
+  font-family:var(--display);
   font-size:27px;
   line-height:1.2;
   font-weight:500;
@@ -4180,7 +4182,7 @@ h1,h2,h3{
   position:relative;
   z-index:2;
   margin:0;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family:var(--display);
   font-size:16px;
   line-height:1.7;
   color:#70533f;
@@ -4335,7 +4337,7 @@ h1,h2,h3{
 .community-heading .label,
 .growing-heading .label{
   margin:0 0 14px;
-  font-family:Inter, Arial, sans-serif;
+  font-family:var(--display);
   font-size:.75rem;
   font-weight:700;
   letter-spacing:.18em;
@@ -4362,7 +4364,7 @@ h1,h2,h3{
 .community-heading .section-lead{
   max-width:680px;
   margin:0;
-  font-family:Inter, Arial, sans-serif;
+  font-family:var(--display);
   font-size:1.08rem;
   line-height:1.8;
   color:#715c4d;
@@ -4443,7 +4445,7 @@ h1,h2,h3{
   border-radius:999px;
   background:rgba(255,255,255,.12);
   backdrop-filter:blur(8px);
-  font-family:Inter, Arial, sans-serif;
+  font-family:var(--display);
   font-size:.7rem;
   letter-spacing:.14em;
   text-transform:uppercase;
@@ -4452,7 +4454,7 @@ h1,h2,h3{
 
 .community-card h3{
   margin:0 0 12px;
-  font-family:"DM Serif Display", Georgia, serif;
+  font-family:var(--display);
   font-size:clamp(2rem, 3vw, 3rem);
   line-height:1.08;
   font-weight:400;
@@ -4462,7 +4464,7 @@ h1,h2,h3{
 .community-card p{
   max-width:520px;
   margin:0;
-  font-family:Inter, Arial, sans-serif;
+  font-family:var(--display);
   font-size:.98rem;
   line-height:1.7;
   color:rgba(255,250,241,.82);
@@ -4472,7 +4474,7 @@ h1,h2,h3{
   position:absolute;
   top:28px;
   right:30px;
-  font-family:"DM Serif Display", Georgia, serif;
+  font-family:var(--display);
   font-size:1.1rem;
   color:rgba(255,255,255,.72);
 }
@@ -4583,7 +4585,7 @@ h1,h2,h3{
 .growing-heading > p:last-child{
   max-width:670px;
   margin:0;
-  font-family:Inter, Arial, sans-serif;
+  font-family:var(--display);
   font-size:1rem;
   line-height:1.8;
   color:rgba(255,248,236,.72);
@@ -4656,7 +4658,7 @@ h1,h2,h3{
   position:absolute;
   top:28px;
   right:28px;
-  font-family:"DM Serif Display", Georgia, serif;
+  font-family:var(--display);
   color:rgba(77,96,50,.52);
 }
 
@@ -4684,7 +4686,7 @@ h1,h2,h3{
 
 .growing-card h3{
   margin:0 0 13px;
-  font-family:"DM Serif Display", Georgia, serif;
+  font-family:var(--display);
   font-size:2rem;
   font-weight:400;
   color:#3c281d;
@@ -4694,7 +4696,7 @@ h1,h2,h3{
   position:relative;
   z-index:2;
   margin:0;
-  font-family:Inter, Arial, sans-serif;
+  font-family:var(--display);
   font-size:.96rem;
   line-height:1.75;
   color:#705c4c;
@@ -5070,7 +5072,7 @@ grid-template-columns:1fr;
 
     font-size:18px;
 
-    font-family:var(--font-heading);
+    font-family:var(--display);
 
     font-weight:500;
 
@@ -5432,7 +5434,7 @@ grid-template-columns:1fr;
 }
 
 .article-list strong {
-  font-family: Georgia, serif;
+  font-family: var(--display);
   font-size: 25px;
   font-weight: 400;
 }
@@ -5523,121 +5525,329 @@ grid-template-columns:1fr;
     color:#B3261E;
 }
 
-.updates-section{
-    position:relative;
-    padding:5rem 0;
-    background:var(--cream, #faf6ee);
-  }
-  .updates-header{
-    text-align:center;
-    max-width:640px;
-    margin:0 auto 3rem;
-  }
-  .updates-header .label{
-    font-family:var(--display);
-    text-transform:uppercase;
-    letter-spacing:0.12em;
-    font-size:0.8rem;
-    color:var(--gold, #c68a1f);
-  }
-  .updates-header h2{
-    font-family:var(--display);
-    color:var(--forest, #2f3d2c);
-    margin:0.5rem 0 0.75rem;
-  }
-  .updates-header p{
-    font-family:var(--display);
-    color:var(--forest-soft, #5a6353);
-    line-height:1.6;
-  }
-  .updates-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
-    gap:1.75rem;
-    max-width:1100px;
-    margin:0 auto;
-    padding:0 1.5rem;
-  }
-  .update-card{
-    background:#fff;
-    border:1px solid rgba(47,61,44,0.1);
-    border-radius:14px;
-    padding:1.75rem;
-    display:flex;
-    flex-direction:column;
-    gap:0.75rem;
-    transition:transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  .update-card:hover{
-    transform:translateY(-3px);
-    box-shadow:0 12px 28px rgba(47,61,44,0.08);
-  }
-  .update-meta{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:0.5rem;
-  }
-  .update-tag{
-    font-family:var(--display);
-    font-size:0.7rem;
-    text-transform:uppercase;
-    letter-spacing:0.08em;
-    padding:0.3rem 0.7rem;
-    border-radius:999px;
-    background:rgba(198,138,31,0.12);
-    color:var(--gold, #c68a1f);
-  }
-  .update-tag.hiring{
-    background:rgba(47,61,44,0.1);
-    color:var(--forest, #2f3d2c);
-  }
-  .update-date{
-    font-family:var(--display);
-    font-size:0.75rem;
-    color:#9a9a8f;
-  }
-  .update-card h3{
-    font-family:var(--display);
-    color:var(--forest, #2f3d2c);
-    font-size:1.15rem;
-    margin:0;
-  }
-  .update-card p{
-    font-family:var(--display);
-    color:#5a5a52;
-    font-size:0.95rem;
-    line-height:1.55;
-    margin:0;
-  }
-  .update-card a.update-link{
-    font-family:var(--display);
-    font-weight:600;
-    font-size:0.9rem;
-    color:var(--gold, #c68a1f);
-    text-decoration:none;
-    margin-top:auto;
-  }
-  .update-card a.update-link:hover{
-    text-decoration:underline;
+/* ==========================================
+   NOTICE BOARD SECTION
+========================================== */
+
+.notice-board-section {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px 10px 20px;
+  background: #f8f1e5;
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.notice-board-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.notice-board-header h2 {
+  margin: 0 0 20px;
+
+  font-family: var(--display);
+  font-size: clamp(36px, 4vw, 52px);
+  font-weight: 500;
+
+  color: #4f6738;
+}
+
+.notice-board-header p {
+  max-width: 900px;
+  margin: 0 auto;
+
+  font-family: var(--display);
+  font-size: 18px;
+  line-height: 1.7;
+
+  color: #5d554d;
+}
+
+
+/* ==========================================
+   CARD GRID
+========================================== */
+
+.notice-board-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 30px;
+
+  align-items: stretch;
+}
+
+
+/* ==========================================
+   CARD
+========================================== */
+
+.notice-card {
+  position: relative;
+
+  min-height: 420px;
+
+  padding: 38px 30px 32px;
+
+  background: #fff8ed;
+
+  border-radius: 28px;
+
+  box-shadow:
+    0 18px 35px rgba(75, 65, 45, 0.10);
+
+  display: flex;
+  flex-direction: column;
+
+  box-sizing: border-box;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* ==========================================
+   CARD HOVER
+========================================== */
+
+.notice-card:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 25px 45px rgba(75, 65, 45, 0.15);
+}
+
+
+/* ==========================================
+   ICON CIRCLE
+========================================== */
+
+.notice-icon {
+  width: 58px;
+  height: 58px;
+
+  margin-bottom: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #eef0df;
+
+  font-size: 27px;
+
+  flex-shrink: 0;
+}
+
+
+/* ==========================================
+   CARD TITLE
+========================================== */
+
+.notice-card h3 {
+  position: relative;
+
+  margin: 0 0 10px;
+  padding-bottom: 4px;
+
+  font-family: var(--display);
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.15;
+
+  color: #241f1a;
+}
+
+
+/* Green line - hidden initially */
+.notice-card h3::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 0;
+  height: 3px;
+
+  background: #526b38;
+
+  transition: width 0.4s ease;
+}
+
+
+/* Show green line when hovering over card */
+.notice-card:hover h3::after {
+  width: 100%;
+}
+
+
+/* ==========================================
+   CARD DESCRIPTION
+========================================== */
+
+.notice-card p {
+  margin: 0;
+
+  font-family: var(--display);
+
+  font-size: 17px;
+  line-height: 1.8;
+
+  color: #665b50;
+}
+
+
+/* ==========================================
+   EMAIL BUTTON
+========================================== */
+
+.notice-card a {
+  margin-top: auto;
+  padding-top: 15px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  width: fit-content;
+
+  font-family: var(--display);
+
+  font-size: 16px;
+  font-weight: 700;
+
+  color: #4f6738;
+
+  text-decoration: none;
+
+  transition: all 0.3s ease;
+}
+
+
+.notice-card a span {
+  font-size: 22px;
+
+  transition: transform 0.3s ease;
+}
+
+
+.notice-card a:hover {
+  color: #bd7047;
+}
+
+
+.notice-card a:hover span {
+  transform: translateX(5px);
+}
+
+
+/* ==========================================
+   GREEN TOP BORDER
+   ONLY ON ACTIVE / LAST CARD
+========================================== */
+
+.notice-card.active-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 5px;
+
+  background: #526b38;
+
+  border-radius: 28px 28px 0 0;
+}
+
+
+/* ==========================================
+   OPTIONAL:
+   Add green top border to ALL cards
+========================================== */
+
+
+.notice-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 5px;
+
+  background: #526b38;
+
+  border-radius: 28px 28px 0 0;
+}
+
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1050px) {
+
+  .notice-board-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-   .update-copy{
-    font-family:'Space Mono', monospace;
-    font-size:0.75rem;
-    color:#9a9a8f;
-    background:none;
-    border:none;
-    padding:0;
-    text-align:left;
-    cursor:pointer;
-    width:fit-content;
-    margin-top:-0.25rem;
+  .notice-card {
+    min-height: 380px;
   }
-  .update-copy:hover{
-    color:var(--forest, #2f3d2c);
-    text-decoration:underline;
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+
+  .notice-board-section {
+    padding: 55px 20px 70px;
   }
-  .update-copy.copied{
-    color:var(--gold, #c68a1f);
+
+  .notice-board-header {
+    margin-bottom: 40px;
   }
+
+  .notice-board-header h2 {
+    font-size: 38px;
+  }
+
+  .notice-board-header p {
+    font-size: 16px;
+  }
+
+  .notice-board-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .notice-card {
+    min-height: 380px;
+    padding: 30px 25px;
+  }
+
+  .notice-card h3 {
+    font-size: 28px;
+  }
+
+}
