@@ -1,11 +1,13 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Contact | The Nourished Roots</title><meta name="description" content="Get in touch with The Nourished Roots for reservations, collaborations or workplace pop-ups in Pune.">
-<link rel="icon" type="image/png" href="https://res.cloudinary.com/i8f7zh8s/image/upload/v1785656106/tnrlogo_g63g5v.png">
+<link rel="icon" type="image/png" href="https://res.cloudinary.com/i8f7zh8s/image/upload/v1785922332/ChatGPT_Image_Aug_5_2026_03_01_07_PM_crqmep.png">
 <link rel="stylesheet" href="styles.css"></head><body>
-<nav class="nav"><div class="container nav-inner"><a class="logo" href="index.html"><img src="https://res.cloudinary.com/i8f7zh8s/image/upload/v1785656106/tnrlogo_g63g5v.png" alt="Nourished Roots Logo" class="logo-img"></a><div class="nav-links" id="navLinks"><a href="index.html">Home</a><a href="about.html">About</a><a href="philosophy.html">Philosophy</a><a href="roots.html">Our Roots</a><a href="menu.html">Menu</a><a href="community.html">Community</a><a href="journal.html">Journal</a><a href="contact.html" class="active" aria-current="page">Contact</a></div><button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button></div></nav>
+<nav class="nav"><div class="container nav-inner"><a class="logo" href="index.html"><img src="https://res.cloudinary.com/i8f7zh8s/image/upload/v1785922332/ChatGPT_Image_Aug_5_2026_03_01_07_PM_crqmep.png" alt="Nourished Roots Logo" class="logo-img"></a><div class="nav-links" id="navLinks"><a href="index.html">Home</a><a href="about.html">About</a><a href="philosophy.html">Philosophy</a><a href="roots.html">Our Roots</a><a href="menu.html">Menu</a><a href="community.html">Community</a><a href="journal.html">Journal</a><a href="contact.html" class="active" aria-current="page">Contact</a></div><button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button></div></nav>
 <header class="hero contact-hero"><div class="container"><div class="hero-content"><h1>Come sit with us.</h1><p>Whether you're looking for nourishing meals, functional beverages, workplace pop-ups or a thoughtful collaboration, we'd love to connect.
 </p></div></div></header>
 <!-- ===================== CAFÉ UPDATES ===================== -->
 <section class="notice-board-section" id="updates">
+    <img src="https://res.cloudinary.com/i8f7zh8s/image/upload/v1784632630/plane_a0o1ya.png"
+     class="making-doodle doodle-top-right1" alt="">
  
   <div class="notice-board-header">
     <h2>Notice Board</h2>
@@ -15,11 +17,31 @@
     </p>
   </div>
  
-  <div class="notice-board-grid">
+  <div class="notice-tabs" id="noticeTabs">
+    <button type="button" class="notice-tab is-active" data-target="all">All</button>
+    <button type="button" class="notice-tab" data-target="work">Work With Us</button>
+    <button type="button" class="notice-tab" data-target="supplier">Supplier Enquiry</button>
+    <button type="button" class="notice-tab" data-target="popup">Workplace Pop-ups</button>
+    <button type="button" class="notice-tab" data-target="collab">Collaborate With Us</button>
+  </div>
+ 
+  <div class="notice-board-grid" id="noticeGrid">
  
     <!-- CARD 1 -->
-    <div class="notice-card">
-      <div class="notice-icon">👩‍🍳</div>
+    <div class="notice-card" data-category="work">
+        <span class="value-number">01</span>
+      <div class="notice-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="9" cy="9" r="4"/>
+          <circle cx="15" cy="9" r="4"/>
+          <circle cx="12" cy="7" r="5"/>
+          <rect x="7" y="13" width="10" height="3" rx="1"/>
+          <line x1="7" y1="20" x2="17" y2="20"/>
+          <line x1="9" y1="16" x2="9" y2="20"/>
+          <line x1="15" y1="16" x2="15" y2="20"/>
+        </svg>
+      </div>
+      <div class="notice-line"></div>
       <h3>Work With Us</h3>
       <p>
         We're always happy to hear from people who share our values
@@ -32,8 +54,16 @@
     </div>
  
     <!-- CARD 2 -->
-    <div class="notice-card">
-      <div class="notice-icon">📦</div>
+    <div class="notice-card" data-category="supplier">
+        <span class="value-number">02</span>
+      <div class="notice-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 8l9-5 9 5-9 5-9-5z"/>
+          <path d="M3 8v9l9 5 9-5V8"/>
+          <path d="M12 13v9"/>
+        </svg>
+      </div>
+      <div class="notice-line"></div>
       <h3>Supplier Enquiry</h3>
       <p>
         We're looking to build relationships with local growers,
@@ -42,12 +72,22 @@
       <a href="https://mail.google.com/mail/?view=cm&fs=1&to=thenourishedroots.in@gmail.com&su=Supplier%20Enquiry" target="_blank" rel="noopener">
         Get in Touch <span>→</span>
       </a>
-      
     </div>
  
     <!-- CARD 3 -->
-    <div class="notice-card">
-      <div class="notice-icon">🏢</div>
+    <div class="notice-card" data-category="popup">
+        <span class="value-number">03</span>
+      <div class="notice-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="4" y="3" width="16" height="18" rx="1"/>
+          <rect x="7.5" y="6.5" width="3" height="3"/>
+          <rect x="13.5" y="6.5" width="3" height="3"/>
+          <rect x="7.5" y="11.5" width="3" height="3"/>
+          <rect x="13.5" y="11.5" width="3" height="3"/>
+          <rect x="9.5" y="16.5" width="5" height="4.5"/>
+        </svg>
+      </div>
+      <div class="notice-line"></div>
       <h3>Workplace Pop-ups</h3>
       <p>
         Interested in bringing nourishing meals and functional
@@ -56,12 +96,19 @@
       <a href="https://mail.google.com/mail/?view=cm&fs=1&to=thenourishedroots.in@gmail.com&su=Workplace%20Pop-ups%20Enquiry" target="_blank" rel="noopener">
         Enquire Now <span>→</span>
       </a>
-      
     </div>
  
     <!-- CARD 4 -->
-    <div class="notice-card active-card">
-      <div class="notice-icon">🤝</div>
+    <div class="notice-card active-card" data-category="collab">
+        <span class="value-number">04</span>
+      <div class="notice-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 12l5-5"/>
+          <path d="M21 12l-5-5"/>
+          <path d="M3 12l4 4 3-3 2 2 3-3 4 4"/>
+        </svg>
+      </div>
+      <div class="notice-line"></div>
       <h3>Collaborate With Us</h3>
       <p>
         If our values resonate with yours, we'd love to explore
@@ -70,7 +117,6 @@
       <a href="https://mail.google.com/mail/?view=cm&fs=1&to=thenourishedroots.in@gmail.com&su=Collaboration%20Enquiry" target="_blank" rel="noopener">
         Start a Conversation <span>→</span>
       </a>
-      
     </div>
  
   </div>
@@ -96,7 +142,7 @@
     <p class="label">Let's Connect</p>
 
     <h2 class="section-title">
-        We'd love to hear your story.
+        We'd love to hear <em>your story.</em>
     </h2>
 
     <p class="section-lead">
@@ -108,7 +154,12 @@
     <div class="contact-details">
 
         <div class="contact-item">
-            <div class="contact-icon">📍</div>
+            <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#556B2F" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round">
+                   <path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21z"/>
+                         <circle cx="12" cy="9.5" r="2.5"/>
+</svg>
+            </div>
 
             <div>
                 <span>Based In</span>
@@ -228,4 +279,6 @@
 <footer class="footer"><div class="container footer-grid"><div><h3>The Nourished Roots</h3><p>Plant-based food rooted in compassion, nourishment and conscious living.
 </p></div><div><strong>Pages</strong><a href="index.html">Home</a><a href="about.html">About</a><a href="menu.html">Menu</a><a href="community.html">Community</a><a href="contact.html">Contact</a></div>
 <div><strong>Based In</strong><p>Pune, Maharashtra</p></div>
-<div><strong>Follow Along</strong><a href="https://www.instagram.com/thenourishedroots.in?igsh=d21hYXQ0d3Rsempi">Instagram</a><a href="#">Facebook</a> <a href="mailto:thenourishedroots.in@gmail.com">Email</a></div></div><div class="container copy">© 2026 Nourished Roots.</div></footer><script src="script.js"></script></body></html>
+<div><strong>Follow Along</strong><a href="https://www.instagram.com/thenourishedroots.in?igsh=d21hYXQ0d3Rsempi" target="_blank"
+  rel="noopener noreferrer">Instagram</a><a href="https://www.facebook.com/share/1BTBVhBR6o/" target="_blank"
+  rel="noopener noreferrer">Facebook</a> <a href="https://mail.google.com/mail/?view=cm&fs=1&to=thenourishedroots.in@gmail.com&su=General%20Enquiry" target="_blank" rel="noopener noreferrer">Email</a></div></div><div class="container copy">© 2026 Nourished Roots.</div></footer><script src="script.js"></script></body></html>

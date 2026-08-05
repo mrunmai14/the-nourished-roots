@@ -1,3 +1,31 @@
+// Notice Board filter: clicking a tab shows only the matching
+  // card and hides the rest; "All" restores the full grid.
+  (function () {
+    var tabs = document.querySelectorAll('#noticeTabs .notice-tab');
+    var cards = document.querySelectorAll('#noticeGrid .notice-card');
+    var grid = document.getElementById('noticeGrid');
+ 
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        var target = tab.getAttribute('data-target');
+ 
+        tabs.forEach(function (t) { t.classList.remove('is-active'); });
+        tab.classList.add('is-active');
+ 
+        if (target === 'all') {
+          grid.classList.remove('is-filtered');
+          cards.forEach(function (card) { card.classList.remove('is-hidden'); });
+          return;
+        }
+ 
+        grid.classList.add('is-filtered');
+        cards.forEach(function (card) {
+          card.classList.toggle('is-hidden', card.getAttribute('data-category') !== target);
+        });
+      });
+    });
+  })();
+
 /* ============================================================
    Nourished Roots — site script
    Handles: mobile nav toggle (all pages) + contact form -> Google Sheet
