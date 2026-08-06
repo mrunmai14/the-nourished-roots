@@ -74,6 +74,28 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  
+// Journal filter: clicking a category button shows only articles
+  // tagged with that category and hides the rest; "All" restores
+  // the full grid. Mirrors the Notice Board filter above.
+  (function () {
+    var filters = document.querySelectorAll('.journal-filters .journal-filter');
+    var cards = document.querySelectorAll('.journal-grid .journal-card');
+
+    filters.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var target = btn.getAttribute('data-filter');
+
+        filters.forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+
+        cards.forEach(function (card) {
+          var show = target === 'all' || card.getAttribute('data-category') === target;
+          card.classList.toggle('is-hidden', !show);
+        });
+      });
+    });
+  })();
   // ---- Contact form (only runs on contact.html) ----
   var form = document.getElementById("contactForm");
   if (!form) return;
