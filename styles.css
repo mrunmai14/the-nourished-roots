@@ -1583,6 +1583,7 @@ h1,h2,h3{
     transform:none;
   }
 }
+
 /* JOURNEY STRIP */
 
 .journey-strip{
@@ -1590,7 +1591,8 @@ h1,h2,h3{
     margin:30px auto;
     padding:30px;
     box-sizing:border-box;
-    background:#556f2c;
+    background:var(--cream);
+    border:2px solid var(--brown);
     border-radius:34px;
     box-shadow:0 24px 50px rgba(57,68,40,.14);
     position:relative;
@@ -1631,7 +1633,7 @@ h1,h2,h3{
     box-sizing:border-box;
     border:1px solid rgba(255,248,236,.14);
     border-radius:20px;
-    background:rgba(255,255,255,.055);
+    background:var(--olive);
     text-align:center;
 
     display:flex;
@@ -1644,13 +1646,13 @@ h1,h2,h3{
 
 .journey-strip .flow-box:hover{
     transform:translateY(-5px);
-    background:rgba(255,255,255,.1);
+    background:var(--olive-soft);
     border-color:rgba(255,248,236,.28);
 }
 
 .journey-strip .flow-box h3{
     margin:0 0 10px;
-    color:#fff8ec;
+    color:var(--clay);
     font-family:var(--display);
     font-size:28px;
     font-weight:400;
@@ -1660,7 +1662,83 @@ h1,h2,h3{
 
 .journey-strip .flow-box p{
     margin:0;
-    color:rgba(255,248,236,.8);
+    color:var(--dark-brown);
+    
+    line-height:1.8;
+    font-size:.98rem;
+}
+
+.journey-strip .arrow{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#d8a066;   /* ← this line controls the arrow color */
+    font-size:1.4rem;
+}
+/* Doodle */
+.journey-doodle-left{
+    position:absolute;
+    left:0px;
+    bottom:-70px;
+
+    width:280px;
+
+    opacity:.6;
+
+    pointer-events:none;
+
+    z-index:2;             /* NOT -1 */
+}
+.journey-strip .flow{
+    display:grid;
+    grid-template-columns:
+        minmax(0,1fr) 24px
+        minmax(0,1fr) 24px
+        minmax(0,1fr) 24px
+        minmax(0,1fr) 24px
+        minmax(0,1fr) 24px
+        minmax(0,1.15fr);
+    align-items:center;
+    gap:10px;
+}
+
+.journey-strip .flow-box{
+    min-width:0;
+    min-height:220px;
+    padding:20px 12px;
+    box-sizing:border-box;
+    border:1px solid rgba(255,248,236,.14);
+    border-radius:20px;
+    background:var(--olive);
+    text-align:center;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    transition:.3s ease;
+}
+
+.journey-strip .flow-box:hover{
+    transform:translateY(-5px);
+    background:var(--olive-soft);
+    border-color:rgba(255,248,236,.28);
+}
+
+.journey-strip .flow-box h3{
+    margin:0 0 10px;
+    color:var(--cream);
+    font-family:var(--display);
+    font-size:28px;
+    font-weight:400;
+    line-height:1.8;
+    
+}
+
+.journey-strip .flow-box p{
+    margin:0;
+    color:var(--dark-brown);
     
     line-height:1.8;
     font-size:.98rem;
