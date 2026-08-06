@@ -840,8 +840,6 @@ h1,h2,h3{
 
   background:
     linear-gradient(rgba(47,58,34,.93), rgba(47,58,34,.95)),
-    
-    center/cover no-repeat;
 }
 
 .goodness-panel h2{
