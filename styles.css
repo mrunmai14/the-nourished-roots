@@ -1752,7 +1752,7 @@ display:inline-block;
     display:flex;
     align-items:center;
     justify-content:center;
-    color:var(--dark-brown);
+    color:var(--brown);
     font-size:1.4rem;
 }
 
@@ -4789,7 +4789,6 @@ display:inline-block;
 .growing-heading > p:last-child{
   max-width:670px;
   margin:0;
-  font-family:var(--display);
   font-size:1rem;
   line-height:1.8;
   color:rgba(255,248,236,.72);
