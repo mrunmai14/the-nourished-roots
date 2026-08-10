@@ -1752,7 +1752,7 @@ display:inline-block;
     display:flex;
     align-items:center;
     justify-content:center;
-    color:#d8a066;
+    color:var(--dark-brown);
     font-size:1.4rem;
 }
 
