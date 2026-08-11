@@ -26,6 +26,28 @@
     });
   })();
 
+// Journal filter: clicking a category button shows only articles
+  // tagged with that category and hides the rest; "All" restores
+  // the full grid. Mirrors the Notice Board filter above.
+  (function () {
+    var filters = document.querySelectorAll('.journal-filters .journal-filter');
+    var cards = document.querySelectorAll('.journal-grid .journal-card');
+
+    filters.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var target = btn.getAttribute('data-filter');
+
+        filters.forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+
+        cards.forEach(function (card) {
+          var show = target === 'all' || card.getAttribute('data-category') === target;
+          card.classList.toggle('is-hidden', !show);
+        });
+      });
+    });
+  })();
+
 /* ============================================================
    Nourished Roots — site script
    Handles: mobile nav toggle (all pages) + contact form -> Google Sheet
@@ -74,28 +96,102 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  
-// Journal filter: clicking a category button shows only articles
-  // tagged with that category and hides the rest; "All" restores
-  // the full grid. Mirrors the Notice Board filter above.
-  (function () {
-    var filters = document.querySelectorAll('.journal-filters .journal-filter');
-    var cards = document.querySelectorAll('.journal-grid .journal-card');
+  // ---- Newsletter signup (only runs on journal.html) ----
+  var newsletterForm = document.getElementById("newsletterForm");
+  if (newsletterForm) {
+    var newsletterStatusEl = document.getElementById("newsletterStatus");
+    var newsletterBtn = newsletterForm.querySelector("button[type='submit']");
 
-    filters.forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var target = btn.getAttribute('data-filter');
+    // Google Apps Script Web App URL — deploy a script bound to the sheet
+    // you want newsletter signups to land in, then paste its /exec URL here.
+    // See the setup notes shared alongside this file for the ready-to-paste
+    // Apps Script code.
+    var NEWSLETTER_WEBHOOK_URL = "PASTE_YOUR_NEWSLETTER_APPS_SCRIPT_URL_HERE";
 
-        filters.forEach(function (b) { b.classList.remove('active'); });
-        btn.classList.add('active');
+    newsletterForm.addEventListener("submit", function (event) {
+      event.preventDefault();
 
-        cards.forEach(function (card) {
-          var show = target === 'all' || card.getAttribute('data-category') === target;
-          card.classList.toggle('is-hidden', !show);
+      // Honeypot check — same pattern as the contact form.
+      if (newsletterForm.website && newsletterForm.website.value.trim() !== "") {
+        showNewsletterStatus("Thanks for subscribing!", false);
+        newsletterForm.reset();
+        return;
+      }
+
+      var email = newsletterForm.journalEmail.value.trim();
+
+      if (!email) {
+        showNewsletterStatus("Please enter your email address.", true);
+        return;
+      }
+
+      var data = {
+        formType: "newsletter",
+        email: email,
+        submittedAt: new Date().toISOString()
+      };
+
+      setNewsletterSubmitting(true);
+
+      sendNewsletterToSheet(data)
+        .then(function () {
+          showNewsletterStatus("Thanks for subscribing!", false);
+          newsletterForm.reset();
+        })
+        .catch(function () {
+          downloadNewsletterAsJSON(data);
+          showNewsletterStatus("We couldn't reach our server, so your email downloaded to your device instead — please send it to us at thenourishedroots.in@gmail.com.", true);
+          newsletterForm.reset();
+        })
+        .finally(function () {
+          setNewsletterSubmitting(false);
         });
-      });
     });
-  })();
+
+    function sendNewsletterToSheet(data) {
+      return fetch(NEWSLETTER_WEBHOOK_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(data)
+      });
+    }
+
+    function downloadNewsletterAsJSON(data) {
+      var json = JSON.stringify(data, null, 2);
+      var blob = new Blob([json], { type: "application/json" });
+      var url = URL.createObjectURL(blob);
+
+      var stamp = data.submittedAt.replace(/[:.]/g, "-");
+      var filename = "nourished-roots-newsletter-" + stamp + ".json";
+
+      var link = document.createElement("a");
+      link.href = url;
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      setTimeout(function () {
+        URL.revokeObjectURL(url);
+      }, 1000);
+    }
+
+    function setNewsletterSubmitting(isSubmitting) {
+      if (!newsletterBtn) return;
+      newsletterBtn.disabled = isSubmitting;
+      newsletterBtn.style.opacity = isSubmitting ? "0.6" : "";
+      newsletterBtn.style.pointerEvents = isSubmitting ? "none" : "";
+    }
+
+    function showNewsletterStatus(message, isError) {
+      if (!newsletterStatusEl) return;
+      newsletterStatusEl.textContent = message;
+      newsletterStatusEl.classList.toggle("form-status--error", !!isError);
+      newsletterStatusEl.classList.toggle("form-status--success", !isError);
+    }
+  }
+
   // ---- Contact form (only runs on contact.html) ----
   var form = document.getElementById("contactForm");
   if (!form) return;

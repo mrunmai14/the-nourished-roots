@@ -103,7 +103,7 @@
               <div class="featured-overlay"></div>
 
               <div class="featured-card-content">
-                <span class="article-tag article-tag-light">Recipes</span>
+                <span class="article-tag article-tag-light">Food Philosophy</span>
 
                 <h3>The Wait</h3>
 
@@ -315,7 +315,7 @@
 
           <a href="./articles/Issue-06-The-Bittersweet-Balance.pdf" target="_blank" class="journal-card-image">
             <img
-              src="https://images.unsplash.com/photo-1595855759920-86582396756a?auto=format&fit=crop&w=700&q=88"
+              src="https://d3pc1xvrcw35tl.cloudfront.net/ln/images/1200x900/neem-and-jaggery_202503900060.jpg"
               alt="Fresh vegetables collected after harvest">
 
             <span class="journal-card-number">05</span>
@@ -384,7 +384,7 @@
 
           <a href="./articles/Issue-10-Healthy-Food-Isnt-Expensive.pdf" target="_blank" class="journal-card-image">
             <img
-              src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1000&q=88"
+              src="https://plus.unsplash.com/premium_photo-1664007711018-d7cb92e664b1?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="Fresh seasonal vegetables at a local market">
 
             <span class="journal-card-number">07</span>
@@ -411,6 +411,40 @@
     </a>
           </div>
 
+        </article>
+        <!-- ARTICLE — Issue 11 -->
+        <article class="journal-card" data-category="wellbeing">
+ 
+          <a href="./articles/Issue-11-Q3-Performance-Review-Human-Body.pdf" target="_blank" class="journal-card-image">
+            <img
+              src="https://images.unsplash.com/photo-1768055104910-8c8d213835fb?auto=format&fit=crop&w=1000&q=88"
+              alt="Hand writing a checklist in a notebook">
+ 
+            <span class="journal-card-number">08</span>
+          </a>
+ 
+          <div class="journal-card-body">
+            <span class="article-tag">Wellbeing</span>
+ 
+            <h3>
+              <a href="./articles/Issue-11-Q3-Performance-Review-Human-Body.pdf" target="_blank">Q3 Performance Review: Human Body</a>
+            </h3>
+ 
+            <p>
+              A tongue-in-cheek quarterly review of the body as an employee —
+              tired, under-slept, running on low protein — and the case for
+              treating it less like a KPI dashboard and more like something
+              we simply live in.
+            </p>
+ 
+            <a href="./articles/Issue-11-Q3-Performance-Review-Human-Body.pdf" target="_blank" class="journal-link">
+              Read Article <span>→</span>
+            </a>
+            <a href="https://www.linkedin.com/posts/the-nourished-roots-goodness-within_%F0%9D%97%94%F0%9D%98%81-%F0%9D%98%80%F0%9D%97%BC%F0%9D%97%BA%F0%9D%97%B2-%F0%9D%97%BD%F0%9D%97%BC%F0%9D%97%B6%F0%9D%97%BB%F0%9D%98%81-%F0%9D%98%81%F0%9D%97%AE%F0%9D%97%B8%F0%9D%97%B6%F0%9D%97%BB%F0%9D%97%B4-%F0%9D%97%B0-ugcPost-7492485959419133952-kCXX/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEEeFsMBfXKikhskuGLmoW_bdExbpBWFJCw" target="_blank" rel="noopener noreferrer" class="linkedin-icon">
+      <i class="fa-brands fa-linkedin-in"></i>
+    </a>
+          </div>
+ 
         </article>
 
       </div>
@@ -452,10 +486,7 @@
           “Food becomes more meaningful when we understand where it came from.”
         </blockquote>
 
-        <a href="#" class="journal-primary-btn">
-          Read the Full Story
-          <span>→</span>
-        </a>
+        
       </div>
 
     </div>
@@ -506,47 +537,50 @@ Watch quick recipes, wellness rituals, café moments and behind-the-scenes stori
 
 </div>
 
-<a href="#" class="view-all">View All Videos →</a>
-
 </div>
 
-<img src="https://res.cloudinary.com/i8f7zh8s/image/upload/v1783833472/doodle_16_jyvsp7.png" class="video-doodle doodle-left">
-<img src="https://res.cloudinary.com/i8f7zh8s/image/upload/v1783833472/doodle_26_eutef2.png" class="video-doodle doodle-right">
+
 
 </section>
   <!-- NEWSLETTER -->
   <section class="journal-newsletter">
     
     <div class="journal-container journal-newsletter-inner">
-
+ 
       <div>
         <p class="journal-label journal-label-light">Notes from Our Roots</p>
-
+ 
         <h2>
           Seasonal stories, thoughtful recipes and food for thought.
         </h2>
-
+ 
         <p>
           Join our journal for new stories from the kitchen, the farm and the
           communities growing around good food.
         </p>
       </div>
-
-      <form class="journal-newsletter-form">
+ 
+      <form class="journal-newsletter-form" id="newsletterForm">
         <label class="sr-only" for="journal-email">Email address</label>
-
+ 
+        <!-- Honeypot: hidden from real visitors, bots often fill it in -->
+        <input type="text" name="website" class="sr-only" tabindex="-1" autocomplete="off">
+ 
         <input
           id="journal-email"
+          name="journalEmail"
           type="email"
           placeholder="Your email address"
           required>
-
+ 
         <button type="submit">
           Subscribe
           <span>→</span>
         </button>
+ 
+        <p id="newsletterStatus" class="form-status" role="status" aria-live="polite"></p>
       </form>
-
+ 
     </div>
   </section>
 
