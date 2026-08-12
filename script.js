@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // you want newsletter signups to land in, then paste its /exec URL here.
     // See the setup notes shared alongside this file for the ready-to-paste
     // Apps Script code.
-    var NEWSLETTER_WEBHOOK_URL = "PASTE_YOUR_NEWSLETTER_APPS_SCRIPT_URL_HERE";
+    var NEWSLETTER_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbwEMlF5hgmme3JJT8flAb_AC3MgDAWzden-_OAM-mAjcRSqu16FEMWeO1IJvl1fRK2yRg/exec";
 
     newsletterForm.addEventListener("submit", function (event) {
       event.preventDefault();

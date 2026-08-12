@@ -4002,6 +4002,7 @@ display:inline-block;
 
 .journal-newsletter-form{
   display:flex;
+  flex-wrap:wrap;
   padding:7px;
   border:1px solid rgba(255,255,255,.2);
   border-radius:100px;
@@ -4039,7 +4040,20 @@ display:inline-block;
   letter-spacing:.08em;
   text-transform:uppercase;
 }
+.journal-newsletter .form-status{
+  flex-basis:100%;
+  width:100%;
+  margin-top:10px;
+  padding:0 13px;
+}
 
+.journal-newsletter .form-status--success{
+  color:#cfe8a8;
+}
+
+.journal-newsletter .form-status--error{
+  color:#ffd0c2;
+}
 
 /* RESPONSIVE */
 
@@ -5715,7 +5729,7 @@ grid-template-columns:1fr;
 }
 
 .form-status{
-    margin-top:16px;
+    margin-top:10px;
     font-size:14px;
     line-height:1.5;
     text-align:center;
